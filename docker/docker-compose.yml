@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: yetinel-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+
+  rust-server:
+    build: ../rust-server
+    container_name: yetinel-rust
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
+
+  python-analytics:
+    build: ../python-analytics
+    container_name: yetinel-python
+    depends_on:
+      - mongo
+    ports:
+      - "5000:5000"
+
+  react-dashboard:
+    build: ../react-dashboard
+    container_name: yetinel-react
+    depends_on:
+      - python-analytics
+    ports:
+      - "3000:80"
+
+volumes:
+  mongo-data:
+
