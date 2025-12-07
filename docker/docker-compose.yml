@@ -18,7 +18,7 @@ services:
     depends_on:
       - mongo
     ports:
-      - "8080:8080"
+      - "8080:8000"
 
   python-analytics:
     build: ../python-analytics
