@@ -14,17 +14,38 @@
 \titleformat{\section}
   {\centering\fontsize{16}{18}\bfseries}
   {}{0pt}{}
+\usepackage{parskip}
+
+% Image 
+\usepackage{graphicx}
+\usepackage{float}
+
 
 \begin{document}
 
+\pagenumbering{gobble}
+
+\section*{Acknowledgement}
+We are proud to have completed this project and would like to express our sincere gratitude to Medhavi College and Pokhara University for providing us with the opportunity to showcase our potential and creativity through this project. We are especially thankful to our supervisor, Mr. Sandip Oli, for his continuous guidance, encouragement, and support throughout the project development process.
+
+This project has contributed significantly to our academic and practical growth, challenging us to step beyond our comfort zones and enhance our technical and problem-solving skills. We would also like to acknowledge our teammates for their collaboration, dedication, and teamwork, which played a crucial role in the successful completion of this project.
+
+
+\newpage
+\pagenumbering{arabic}
 \section{Introduction}
 
 In today’s cybersecurity landscape, web applications remain one of the most frequently targeted attack surfaces, making effective log monitoring and threat detection essential for organizations of all sizes. This project aims to design and develop a lightweight, web-focused Security Information and Event Management (SIEM) system capable of collecting, normalizing, analyzing, and visualizing security logs in real time. By combining a Rust-based ingestion server, Python analytics engine, and a React-powered dashboard, the system provides centralized monitoring, rule-based alerting, and actionable insights for detecting common web attacks. The primary objective is to create an accessible, extensible, and beginner-friendly SIEM tool that helps developers and security learners better understand application-level threats and defensive monitoring.
 
+\noindent Traditional SIEM solutions are often complex, resource-intensive, and expensive, making them unsuitable for small organizations, academic environments, or learners who want to understand how security monitoring systems work internally. This gap highlights the needfor a lightweight, customizable, and educational SIEM-like platform that focuses on core concepts such as log ingestion, normalization, rule-based detection, and visualization, without the overhead of enterprise-grade systems.
+
+\noindent This project aims to design and develop a simplified, web-focused SIEM system that demonstrates essential security monitoring principles. The system integrates a Rust-based log ingestion server, a Python analytics engine, and a React-based dashboard to provide real-time log analysis, alerting, and visualization. By emphasizing clarity, modularity, and ease of use, the project serves both as a functional security monitoring tool and a learning platform for students and developers interested in cybersecurity, backend systems, and defensive monitoring.
+
+\newpage
 \section{Objectives}
 \begin{itemize}
     \item To design and develop a lightweight SIEM-inspired security monitoring system capable of collecting, normalizing, and analyzing system logs from multiple sources through a centralized backend.
-    \item To implement a user‑friendly React-based dashboard that provides real-time alerts, visual analytics, and searchable log data to support efficient threat detection and incident review.
+    \item To implement a user-friendly React-based dashboard that provides real-time alerts, visual analytics, and searchable log data to support efficient threat detection and incident review.
 \end{itemize}
 
 \section{Scope}
@@ -40,17 +61,17 @@ In today’s cybersecurity landscape, web applications remain one of the most fr
 
 \section{Tools \& Technologies}
 \begin{itemize}
-  \item \textbf{Rust}: Used for building the high‑performance log ingestion server responsible for receiving, parsing, and forwarding logs.
+  \item \textbf{Rust}: Used for building the high-performance log ingestion server responsible for receiving, parsing, and forwarding logs.
 
-  \item \textbf{Python}: Utilized for the analytics engine, including log normalization, rule‑based detection, and alert generation.
+  \item \textbf{Python}: Utilized for the analytics engine, including log normalization, rule-based detection, and alert generation.
 
-  \item \textbf{React.js}: Framework for building the interactive web dashboard used to visualize logs, alerts, and real‑time data.
+  \item \textbf{React.js}: Framework for building the interactive web dashboard used to visualize logs, alerts, and real-time data.
 
-  \item \textbf{Node.js}: For building auxiliary services or testing log‑sending scripts during development.
+  \item \textbf{Node.js}: For building auxiliary services or testing log-sending scripts during development.
 
   \item \textbf{MongoDB}: Used as the primary storage backend for logs, events, and alert data.
 
-  \item \textbf{WebSockets}: Enables real‑time updates between the backend and the dashboard.
+  \item \textbf{WebSockets}: Enables real-time updates between the backend and the dashboard.
 
   \item \textbf{REST API}: Facilitates communication between frontend and backend for fetching log data, alerts, and search results.
 
@@ -67,5 +88,14 @@ Modern organizations generate massive volumes of logs from applications, servers
 
 
 This project aims to solve this limitation by developing a simplified SIEM-like system that can ingest logs, normalize them, detect suspicious patterns, and present the data through an interactive dashboard, enabling efficient monitoring and analysis.
+
+\newpage
+\section{System Architecture Design}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{sys-arch.png}
+    \caption{System Architecture of the Proposed SIEM Platform}
+    \label{fig:system-architecture}
+\end{figure}
 \end{document}
 
